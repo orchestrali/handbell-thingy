@@ -164,7 +164,7 @@ function animate() {
       if (arr[row+1][0] === arr[row][1] && arr[row+1][1] === arr[row][0]) {
         //if the bells trade places
         pos.reverse();
-        side *= -1;
+        o.side *= -1;
       } else {
         //i is 0, j is 1; then swap
         //did I make it so x is the 2nd bell and y is the first??
