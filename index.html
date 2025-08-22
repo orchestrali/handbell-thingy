@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch">
+
+    <title>Handbell Animations</title>
+
+    <link rel="icon" type="image/png" href="https://sallyandbobminor.wordpress.com/wp-content/uploads/2025/07/bristol-major-short.png">
+
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <h1>
+      Handbell Thingy
+    </h1>
+    <div id="methodsearch">
+      <input type="text" id="methodtitle" />
+      <button id="choosemethod" class="disabled">
+        Select
+      </button>
+        <ul id="methodlist">
+
+        </ul>
+    </div>
+    <div id="checkboxes">
+      <label for="pair1"><input type="checkbox" id="pair1" value="1" checked />1–2</label>
+      <label for="pair3"><input type="checkbox" id="pair3" value="3" />3–4</label>
+      <label for="pair5"><input type="checkbox" id="pair5" value="5" />5–6</label>
+      <label for="pair7"><input type="checkbox" id="pair7" value="7" />7–8</label>
+      <label for="pair9"><input type="checkbox" id="pair9" value="9" disabled />9–10</label>
+      <label for="pair11"><input type="checkbox" id="pair11" value="11" disabled />11–12</label>
+    </div>
+    <input type="radio" name="what" value="paths" checked /><label>paths</label>
+    <input type="radio" name="what" value="lines" /><label>lines</label>
+    <button id="go" class="disabled">
+      Go
+    </button>
+    <button id="reset" class="disabled">
+      Reset
+    </button>
+    <div id="container">
+      
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="jquery.svg.js"></script>
+    <script src="jquery.svganim.js"></script>
+    <script src="handbells.js"></script>
+  </body>
+
+</html>

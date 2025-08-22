@@ -1,0 +1,357 @@
+/* this file is loaded by index.html and styles the page */
+
+* {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body,
+input,
+select,
+textarea {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+}
+p label {
+  display: inline-block;
+  /*width: 6em;*/
+  margin-right: 1em;
+  font-style: bold;
+  vertical-align: top;
+}
+p label.radioLabel {
+  margin: 0em;
+  vertical-align: middle;
+}
+p label.radioLabel input {
+  margin: 0em;
+}
+li {
+  list-style-type: none;
+}
+tr {
+  vertical-align: top;
+}
+p.fields {
+  display: none;
+}
+.hide {
+  display: none;
+}
+.clearfix {
+  clear: both;
+  height: 0em;
+}
+#pluginReqd {
+  display: none;
+}
+#svgdance {
+  float: left;
+  width: 600px;
+  height: 800px;
+  border: 1px solid #222;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.multiline {
+  display: flex;
+  flex-flow: row;
+}
+.multiline label {
+  float: left;
+}
+.multiline span {
+  display: block;
+}
+#callp {
+  width: 600px;
+}
+span#call {
+  height: 38px;
+}
+
+#withMusic {
+  position: relative;
+  top: 2px;
+}
+label[for="withMusic"] {
+  position: relative;
+  top: 4px;
+  font-style: normal;
+}
+#panels {
+  float: left;
+}
+#designPanel,
+#positionPanel {
+  display: none;
+  margin: 0em 0em 1em 2em;
+  padding: 0em 1em;
+  background-color: #ccffcc;
+  border: 1px solid #008800;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#whochoices {
+  display: none;
+}
+.buttonRow {
+  margin: 0em;
+}
+.note {
+  font-size: 80%;
+}
+#curDancer {
+  font-style: normal;
+  font-weight: bold;
+}
+img.nudge,
+img.rotate {
+  margin: 2px;
+}
+#nudgeAmount {
+  position: relative;
+  top: -6px;
+}
+#replicateConfig {
+  margin-left: 2em;
+}
+span.filler {
+  display: inline-block;
+  width: 16px;
+  margin: 2px;
+}
+#designArea {
+  display: none;
+  position: relative;
+  padding-top: 24px;
+}
+.tab {
+  border: 1px solid #277a53;
+  border-radius: 5px;
+}
+#editTitle,
+#editFormation,
+#editMusic,
+#editSource,
+#editNotes,
+#editSynchMusic,
+#editSynchAttribution,
+#editCall {
+  width: 30em;
+}
+.dancerLabel {
+  width: 6em;
+}
+#actionTranspose {
+  width: auto;
+  font-style: normal;
+}
+#editPositions td {
+  padding: 0em 1em;
+}
+#editPositions .position,
+#editPositions .positionCheck {
+  text-align: center;
+}
+.current g {
+  background-color: #a0dcfe;
+  fill: #a0dcfe;
+  stroke: #003e88;
+}
+#editOutput textarea,
+#editCallSheet textarea {
+  width: 100%;
+  height: 40em;
+}
+#barPeriod {
+  width: 4em;
+}
+#dialogUnderlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #000;
+  opacity: 0.2;
+}
+.dialog {
+  padding: 1em;
+  z-index: 20;
+  background-color: #fff;
+  border: 2px solid #008800;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#newName {
+  width: 40em;
+}
+#callSheetPrint {
+  display: none;
+}
+#callSheetDialog {
+  height: 100%;
+  overflow: scroll;
+}
+#callSheetOutput p,
+#callSheetOutput2 p {
+  padding-left: 7.5em;
+}
+#callSheetOutput label,
+#callSheetOutput2 label {
+  position: absolute;
+  left: 1em;
+}
+.callSheet td {
+  padding: 0.25em;
+}
+#rotateDialog label {
+  width: 3em;
+}
+#rotateDialog label[for] {
+  width: 9em;
+}
+td.bars {
+  width: 7em;
+  text-align: right;
+}
+span.left {
+  display: inline-block;
+  width: 45%;
+  margin-right: 0.25em;
+  text-align: right;
+}
+ul.tabs-nav {
+  margin-bottom: 0;
+  margin-top: -23px;
+  position: absolute;
+}
+.tabs-nav li {
+  display: inline-block;
+  
+}
+.tabs-nav a {
+  color: #277a53;
+  text-decoration: none;
+}
+.tabs-nav a span {
+  padding: 2px 7px;
+  display: inline-block;
+  width: 85px;
+}
+.tabs-nav a,
+.tabs-nav a span {
+  background: url(
+      https://cdn.glitch.com/1b11a1fb-599e-47a3-9eff-c7176b15bb2c%2Ftab-green.png
+    )no-repeat;
+}
+.tabs-nav a {
+  background-position: 100% -100px;
+}
+.tabs-nav li.selected a {
+  color: black;
+}
+.tabs-nav li.selected {
+  border-bottom: 1px solid white;
+}
+
+.tab {
+  display: none;
+}
+
+input[type="number"] {
+  width: 70px;
+}
+
+tr.current {
+  background-color: rgb(219, 251, 226);
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button,
+.ui-widget {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+@media print {
+  body {
+    padding: 0em;
+    border: none;
+  }
+  body > * {
+    display: none;
+  }
+  #callSheetDialog {
+    height: 0px;
+    padding: 0px;
+    border: none;
+  }
+  #callSheetPrint {
+    display: block;
+  }
+  #dialogUnderlay {
+    background-color: transparent;
+  }
+}
+
+.disabled {
+  color: #888888;
+}
+
+#methodsearch {
+  width: 250px;
+  position: relative;
+}
+#methodlist {
+  margin-left: 1px;
+  padding-left: 0;
+  width: 98.5%;
+  position: absolute;
+  top: 6px;
+  background-color: aliceblue;
+}
+#methodlist li {
+  display: none;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: aliceblue;
+}
+#methodlist li:hover, #methodlist li.selected {
+  background-color: lightsteelblue;
+}
+
+
+path.bellpath {
+  stroke-dasharray: 55;
+  stroke-dashoffset: 55;
+  animation: dash 500ms linear forwards;
+}
+
+.bell text {
+  stroke: white;
+}
+
+#mybell circle {
+  fill: darkred;
+  stroke: darkred;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
