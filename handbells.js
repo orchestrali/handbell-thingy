@@ -34,38 +34,68 @@ var row = 0;
 
 $(function() {
 
-	$("#container").svg({onLoad: (o) => {
+  getmethods();
+  $("#container").svg({onLoad: (o) => {
     grid = o;
     grid.configure({xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink": "http://www.w3.org/1999/xlink", width: 600, height: 600, id: "gridcontainer"});
+    drawgrid(stage);
+    drawpairs();
   }});
+  $("#go").on("click", start);
+  $("#reset").on("click", () => {
+    if (!$(this).hasClass("disabled")) {
+      reset();
+    }
+  });
+
+  $('input[name="what"]').on("click", changewhat);
+  $('input[type="checkbox"]').on("click", changepairs);
+
+  $("#methodtitle").on("click", methodsearch);
+  $("#methodtitle").on("keyup", methodsearch);
+  $("#methodlist").on("click", "li", (e) => {
+    $("#methodtitle").val($(e.currentTarget).text());
+    $("#methodlist li").hide();
+    $("#choosemethod").removeClass("disabled");
+    e.stopPropagation();
+  });
+  $("#choosemethod").on("click", choosemethod);
 });
 
 function getmethods() {
-	//get stuff from file(s)
+  //get stuff from file(s)
   $.get("methods.json", function(data) {
     methods = data;
     //console.log(methods.length);
   });
 }
 
+function start() {
+  if (!running) {
+    $("input").prop("disabled", true);
+    running = true;
+    animate();
+  }
+}
+
 //set up dot grid
 function drawgrid(n) {
-	$("#gridcontainer").children().remove();
-	let group = grid.group("grid", {fill: "black", stroke: "none"});
-	for (let a = 1; a < n; a++) {
-		for (let b = a+1; b <= n; b++) {
-			grid.circle(group, a*gap+10, b*gap+10, 3);
-			grid.circle(group, b*gap+10, a*gap+10, 3);
-		}
-	}
+  $("#gridcontainer").children().remove();
+  let group = grid.group("grid", {fill: "black", stroke: "none"});
+  for (let a = 1; a < n; a++) {
+    for (let b = a+1; b <= n; b++) {
+      grid.circle(group, a*gap+10, b*gap+10, 3);
+      grid.circle(group, b*gap+10, a*gap+10, 3);
+    }
+  }
 
-	grid.group("bells", {fill: "none", stroke: "blue", "stroke-width": 2});
-	drawpairs();
+  grid.group("bells", {fill: "none", stroke: "blue", "stroke-width": 2});
+  
 }
 
 //draw starting position and attach array of positions to the pairs
 function drawpairs() {
-	let bells = $("#bells");
+  let bells = $("#bells");
   let path = [];
   for (let i = 0; i < pairs.length; i++) {
     let pair = pairs[i];
@@ -202,6 +232,7 @@ function stagechange() {
     let n = i*2+1;
     $("#pair"+n).prop("disabled", n > stage);
   }
+
 }
 
 //build plain course from place notation
