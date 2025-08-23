@@ -261,7 +261,7 @@ function buildrows() {
       let row = [];
       let dir = 1;
       let change = pn[i];
-      for (let p = 0; p < 8; p++) {
+      for (let p = 0; p < stage; p++) {
         if (change.includes(p+1)) {
           row.push(prevrow[p]);
         } else {
