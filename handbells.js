@@ -80,6 +80,7 @@ function start() {
 
 //set up dot grid
 function drawgrid(n) {
+  console.log("drawing grid");
   $("#gridcontainer").children().remove();
   let group = grid.group("grid", {fill: "black", stroke: "none"});
   for (let a = 1; a < n; a++) {
@@ -95,6 +96,7 @@ function drawgrid(n) {
 
 //draw starting position and attach array of positions to the pairs
 function drawpairs() {
+  console.log("drawing pairs");
   let bells = $("#bells");
   let path = [];
   for (let i = 0; i < pairs.length; i++) {
@@ -222,6 +224,7 @@ function choosemethod() {
       pn = m.plainPN;
       let prev = stage;
       stage = m.stage;
+      console.log(stage);
       if (stage != prev) stagechange();
       buildrows();
       $("#bells").children().remove();
@@ -234,6 +237,7 @@ function choosemethod() {
 }
 
 function stagechange() {
+  console.log("changing stage");
   for (let i = 0; i < 6; i++) {
     let n = i*2+1;
     $("#pair"+n).prop("disabled", n > stage);
@@ -243,6 +247,7 @@ function stagechange() {
 
 //build plain course from place notation
 function buildrows() {
+  console.log("building rows");
   rowArr = [[1,2,3,4,5,6]];
   if (stage > 6) {
     for (let i = 7; i <= stage; i++) {
