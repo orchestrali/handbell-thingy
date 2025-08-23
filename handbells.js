@@ -206,6 +206,9 @@ function animate() {
     if (row === rowArr.length-1) {
       running = false;
       $("input").prop("disabled", false);
+      for (let i = stage+1; i < 12; i+=2) {
+        $("#pair"+i).prop("disabled", true);
+      }
     }
   }
 }
@@ -214,6 +217,7 @@ function choosemethod() {
   if (!$("#choosemethod").hasClass("disabled")) {
     let m = methods.find(o => o.name === $("#methodtitle").val());
     if (m) {
+      console.log(m);
       method = m;
       pn = m.plainPN;
       let prev = stage;
@@ -223,6 +227,8 @@ function choosemethod() {
       $("#bells").children().remove();
       drawpairs();
       $("#go").removeClass("disabled");
+    } else {
+      console.log("problem getting method");
     }
   }
 }
@@ -232,7 +238,7 @@ function stagechange() {
     let n = i*2+1;
     $("#pair"+n).prop("disabled", n > stage);
   }
-
+  drawgrid(stage);
 }
 
 //build plain course from place notation
